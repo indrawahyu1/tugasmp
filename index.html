@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jati Raos Catering</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1a5c40',
+            secondary: '#2e8b57',
+            accent: '#f5a623',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .hero-gradient {
+      background: linear-gradient(135deg, #1a5c40 0%, #2e8b57 100%);
+    }
+    .menu-card:hover {
+      transform: translateY(-5px);
+    }
+    .floating-button {
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header with modern navbar -->
+  <header class="bg-primary text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <i class="fas fa-utensils text-2xl text-accent"></i>
+        <h1 class="text-3xl font-bold">Jati <span class="text-accent">Raos</span></h1>
+      </div>
+      <nav class="hidden md:flex space-x-8">
+        <a href="#home" class="font-semibold hover:text-accent transition">Home</a>
+        <a href="#menu" class="font-semibold hover:text-accent transition">Menu</a>
+        <a href="#location" class="font-semibold hover:text-accent transition">Location</a>
+        <a href="#contact" class="font-semibold hover:text-accent transition">Contact</a>
+      </nav>
+      <a href="#order" class="bg-accent text-white px-6 py-2 rounded-full font-semibold hover:bg-opacity-90 transition hidden md:block">
+        Order Now
+      </a>
+      <button class="md:hidden text-2xl" id="mobile-menu-button">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="md:hidden hidden bg-primary-dark px-6 py-4" id="mobile-menu">
+      <div class="flex flex-col space-y-4">
+        <a href="#home" class="font-semibold hover:text-accent transition">Home</a>
+        <a href="#menu" class="font-semibold hover:text-accent transition">Menu</a>
+        <a href="#location" class="font-semibold hover:text-accent transition">Location</a>
+        <a href="#contact" class="font-semibold hover:text-accent transition">Contact</a>
+        <a href="#order" class="bg-accent text-white px-6 py-2 rounded-full font-semibold text-center hover:bg-opacity-90 transition">
+          Order Now
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main id="home" class="hero-gradient text-white py-20 md:py-32">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-10 md:mb-0">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Authentic Javanese Catering <br>
+          <span class="text-accent">For Your Special Moments</span>
+        </h2>
+        <p class="mb-6 text-lg text-gray-100">Experience the rich flavors of traditional Javanese cuisine, prepared with love and served with excellence for your weddings, corporate events, and private celebrations.</p>
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+          <a
+            id="order"
+            href="https://wa.me/6281775497318"
+            target="_blank"
+            class="inline-block bg-accent text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition text-center"
+          >
+            <i class="fab fa-whatsapp mr-2"></i> Order Now
+          </a>
+          <a
+            href="#menu"
+            class="inline-block bg-white text-primary border-2 border-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-10 hover:text-white transition text-center"
+          >
+            View Menu
+          </a>
+        </div>
+      </div>
+      <div class="md:w-1/2 relative">
+        <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+             alt="Javanese Cuisine" 
+             class="rounded-2xl shadow-2xl w-full h-auto object-cover" />
+        <div class="absolute -bottom-5 -right-5 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+          <div class="flex items-center">
+            <div class="bg-primary p-3 rounded-full mr-3">
+              <i class="fas fa-star text-accent"></i>
+            </div>
+            <div>
+              <p class="font-bold text-gray-800">Rated 4.9/5</p>
+              <p class="text-sm text-gray-600">by 200+ customers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Menu Section -->
+  <section id="menu" class="container mx-auto px-6 py-16">
+    <div class="text-center mb-16">
+      <h3 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Signature Dishes</h3>
+      <p class="text-gray-600 max-w-2xl mx-auto">Each dish is prepared with traditional recipes passed down through generations, using only the freshest local ingredients.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Nasi Tumpeng -->
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden menu-card transition duration-300 hover:shadow-xl">
+        <div class="relative h-64 overflow-hidden">
+          <img src="https://img.freepik.com/premium-photo/yellow-rice-cone-shape-indonesia-called-nasi-tumpeng-festive-indonesian-rice-dish-with-side-dishes_511235-2494.jpg?w=1380" 
+               alt="Nasi Tumpeng" 
+               class="w-full h-full object-cover transition duration-500 hover:scale-105" />
+          <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+            Best Seller
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h4 class="text-xl font-bold text-primary">Nasi Tumpeng</h4>
+            <span class="bg-accent bg-opacity-20 text-accent px-2 py-1 rounded text-sm font-bold">IDR 350K</span>
+          </div>
+          <p class="text-gray-600 mb-4">Traditional ceremonial cone-shaped yellow rice surrounded by assorted Javanese dishes, symbolizing gratitude and prosperity.</p>
+          <div class="flex items-center text-yellow-500">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span class="text-gray-500 ml-2 text-sm">4.7 (86)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ayam Bakar -->
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden menu-card transition duration-300 hover:shadow-xl">
+        <div class="relative h-64 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1630315500315-43112e2bfd88?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+               alt="Ayam Bakar" 
+               class="w-full h-full object-cover transition duration-500 hover:scale-105" />
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h4 class="text-xl font-bold text-primary">Ayam Bakar</h4>
+            <span class="bg-accent bg-opacity-20 text-accent px-2 py-1 rounded text-sm font-bold">IDR 75K</span>
+          </div>
+          <p class="text-gray-600 mb-4">Grilled chicken marinated with a blend of Javanese spices, served with sambal and lalapan (fresh vegetables).</p>
+          <div class="flex items-center text-yellow-500">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span class="text-gray-500 ml-2 text-sm">5.0 (124)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sate Ayam -->
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden menu-card transition duration-300 hover:shadow-xl">
+        <div class="relative h-64 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1644288232801-2b40ff99d54f?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+               alt="Sate Ayam" 
+               class="w-full h-full object-cover transition duration-500 hover:scale-105" />
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h4 class="text-xl font-bold text-primary">Sate Ayam</h4>
+            <span class="bg-accent bg-opacity-20 text-accent px-2 py-1 rounded text-sm font-bold">IDR 60K</span>
+          </div>
+          <p class="text-gray-600 mb-4">Skewered and grilled chicken served with rich peanut sauce, sweet soy sauce, and garnished with shallots and chili.</p>
+          <div class="flex items-center text-yellow-500">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span class="text-gray-500 ml-2 text-sm">4.9 (112)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gado-Gado -->
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden menu-card transition duration-300 hover:shadow-xl">
+        <div class="relative h-64 overflow-hidden">
+          <img src="https://img.freepik.com/premium-photo/high-angle-view-food-plate-table_1048944-29431080.jpg?w=1380" 
+               alt="Gado-Gado" 
+               class="w-full h-full object-cover transition duration-500 hover:scale-105" />
+          <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+            Vegan
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h4 class="text-xl font-bold text-primary">Gado-Gado</h4>
+            <span class="bg-accent bg-opacity-20 text-accent px-2 py-1 rounded text-sm font-bold">IDR 45K</span>
+          </div>
+          <p class="text-gray-600 mb-4">Indonesian vegetable salad with boiled vegetables, tofu, tempeh, hard-boiled eggs, and peanut sauce dressing.</p>
+          <div class="flex items-center text-yellow-500">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span class="text-gray-500 ml-2 text-sm">4.6 (78)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rendang -->
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden menu-card transition duration-300 hover:shadow-xl">
+        <div class="relative h-64 overflow-hidden">
+          <img src="https://img.freepik.com/free-photo/delicious-goulash-ready-dinner_23-2149370898.jpg?t=st=1745858155~exp=1745861755~hmac=2bbf7b7eb8c1d0ae8ef2ed2018490c3d232f4b5d8e7a8f0b8ea3ad9db354b2c5&w=1380" 
+               alt="Rendang" 
+               class="w-full h-full object-cover transition duration-500 hover:scale-105" />
+          <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+            World's Best
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h4 class="text-xl font-bold text-primary">Rendang</h4>
+            <span class="bg-accent bg-opacity-20 text-accent px-2 py-1 rounded text-sm font-bold">IDR 90K</span>
+          </div>
+          <p class="text-gray-600 mb-4">Slow-cooked beef in coconut milk and Javanese spices until tender and the sauce caramelizes into a rich, dark gravy.</p>
+          <div class="flex items-center text-yellow-500">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span class="text-gray-500 ml-2 text-sm">5.0 (156)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Es Cendol -->
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden menu-card transition duration-300 hover:shadow-xl">
+        <div class="relative h-64 overflow-hidden">
+          <img src="https://img.freepik.com/free-photo/bowls-malaysian-cendol-dessert_53876-25014.jpg?t=st=1745858106~exp=1745861706~hmac=6c123d0309f5e70acc72640d9ec6f1959d77bba1dbf550c5e4768128579441eb&w=1380" 
+               alt="Es Cendol" 
+               class="w-full h-full object-cover transition duration-500 hover:scale-105" />
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h4 class="text-xl font-bold text-primary">Es Cendol</h4>
+            <span class="bg-accent bg-opacity-20 text-accent px-2 py-1 rounded text-sm font-bold">IDR 25K</span>
+          </div>
+          <p class="text-gray-600 mb-4">Traditional Javanese iced dessert with green rice flour jelly, coconut milk, and palm sugar syrup, perfect to complement spicy dishes.</p>
+          <div class="flex items-center text-yellow-500">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span class="text-gray-500 ml-2 text-sm">4.8 (92)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-16">
+      <a href="https://wa.me/6281775497318" target="_blank" class="inline-block bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition">
+        <i class="fab fa-whatsapp mr-2"></i> View Full Menu & Order
+      </a>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h3 class="text-3xl md:text-4xl font-bold text-primary mb-4">What Our Customers Say</h3>
+        <p class="text-gray-600 max-w-2xl mx-auto">Don't just take our word for it - hear from our satisfied customers</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="flex items-center text-yellow-500 mr-2">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="text-gray-500 text-sm">2 weeks ago</span>
+          </div>
+          <p class="text-gray-700 mb-6">"The Nasi Tumpeng was the highlight of our company anniversary. The flavors were authentic and the presentation was stunning!"</p>
+          <div class="flex items-center">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Wijaya" class="w-12 h-12 rounded-full mr-4 object-cover">
+            <div>
+              <h5 class="font-bold text-primary">Sarah Wijaya</h5>
+              <p class="text-gray-600 text-sm">Corporate Event</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-2xl shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="flex items-center text-yellow-500 mr-2">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="text-gray-500 text-sm">1 month ago</span>
+          </div>
+          <p class="text-gray-700 mb-6">"The Rendang was absolutely delicious - just like my grandmother used to make. Perfect for our family reunion!"</p>
+          <div class="flex items-center">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Budi Santoso" class="w-12 h-12 rounded-full mr-4 object-cover">
+            <div>
+              <h5 class="font-bold text-primary">Budi Santoso</h5>
+              <p class="text-gray-600 text-sm">Family Gathering</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-2xl shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="flex items-center text-yellow-500 mr-2">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span class="text-gray-500 text-sm">3 days ago</span>
+          </div>
+          <p class="text-gray-700 mb-6">"Excellent service and food quality. The Ayam Bakar was perfectly grilled with amazing spices. Will definitely order again!"</p>
+          <div class="flex items-center">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Dewi Rahayu" class="w-12 h-12 rounded-full mr-4 object-cover">
+            <div>
+              <h5 class="font-bold text-primary">Dewi Rahayu</h5>
+              <p class="text-gray-600 text-sm">Wedding Catering</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Section -->
+  <section id="location" class="container mx-auto px-6 py-16">
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+        <h3 class="text-3xl md:text-4xl font-bold text-primary mb-6">Visit Our Kitchen</h3>
+        <p class="text-gray-600 mb-6">Come visit us at our kitchen in Kudus, where all the magic happens. We'd love to show you how we prepare our traditional dishes with care and passion.</p>
+        
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+              <i class="fas fa-map-marker-alt text-primary"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-800">Address</h4>
+              <p class="text-gray-600">Jatikulon Krajan, Jati Kulon, Kec. Jati, Kabupaten Kudus, Jawa Tengah 59347</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+              <i class="fas fa-clock text-primary"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-800">Opening Hours</h4>
+              <p class="text-gray-600">Monday - Sunday: 8:00 AM - 8:00 PM</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+              <i class="fas fa-phone-alt text-primary"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-800">Contact</h4>
+              <p class="text-gray-600">+62 817-7549-7318</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="md:w-1/2 w-full h-96 rounded-2xl overflow-hidden shadow-xl">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31691.663067627!2d110.8470067!3d-6.7923833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70db2d3a9f0a4d%3A0x401e8f1fc28c8b0!2sJatikulon%2C%20Jati%20Kulon%2C%20Kec.%20Jati%2C%20Kabupaten%20Kudus%2C%20Jawa%20Tengah%2059347!5e0!3m2!1sen!2sid!4v1687423456789!5m2!1sen!2sid"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-primary text-white py-16">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-3xl md:text-4xl font-bold mb-6">Ready to Experience Jati Raos Catering?</h3>
+      <p class="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">Book us for your next event and let us handle the food with authentic Javanese flavors that will impress your guests.</p>
+      <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <a
+          href="https://wa.me/6281775497318"
+          target="_blank"
+          class="inline-block bg-accent text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition"
+        >
+          <i class="fab fa-whatsapp mr-2"></i> Chat on WhatsApp
+        </a>
+        <a
+          href="tel:+6281775497318"
+          class="inline-block bg-white text-primary px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition"
+        >
+          <i class="fas fa-phone-alt mr-2"></i> Call Us Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-gray-50 py-16">
+    <div class="container mx-auto px-6">
+      <h3 class="text-3xl md:text-4xl font-bold text-center text-primary mb-12">Get In Touch</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <h4 class="text-2xl font-semibold text-primary mb-6">Contact Information</h4>
+          <p class="text-gray-600 mb-8">Have questions about our catering services? Reach out to us through any of these channels and we'll get back to you promptly.</p>
+          
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                <i class="fas fa-phone-alt text-primary"></i>
+              </div>
+              <div>
+                <h5 class="font-bold text-gray-800">Phone</h5>
+                <p class="text-gray-600">+62 817-7549-7318</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                <i class="fas fa-envelope text-primary"></i>
+              </div>
+              <div>
+                <h5 class="font-bold text-gray-800">Email</h5>
+                <p class="text-gray-600">info@jatiraos.com</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                <i class="fas fa-map-marker-alt text-primary"></i>
+              </div>
+              <div>
+                <h5 class="font-bold text-gray-800">Address</h5>
+                <p class="text-gray-600">Jatikulon Krajan, Jati Kulon, Kec. Jati, Kabupaten Kudus, Jawa Tengah 59347</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8">
+            <h5 class="font-bold text-gray-800 mb-4">Follow Us</h5>
+            <div class="flex space-x-4">
+              <a href="#" class="bg-primary bg-opacity-10 p-3 rounded-full text-primary hover:bg-opacity-20 transition">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="bg-primary bg-opacity-10 p-3 rounded-full text-primary hover:bg-opacity-20 transition">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="bg-primary bg-opacity-10 p-3 rounded-full text-primary hover:bg-opacity-20 transition">
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="text-2xl font-semibold text-primary mb-6">Send Us a Message</h4>
+          <form class="space-y-6">
+            <div>
+              <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+              <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your name">
+            </div>
+            
+            <div>
+              <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+              <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your email">
+            </div>
+            
+            <div>
+              <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+              <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your phone number">
+            </div>
+            
+            <div>
+              <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+              <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Tell us about your event"></textarea>
+            </div>
+            
+            <button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/6281775497318" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-xl hover:bg-green-600 transition floating-button">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-8">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="flex items-center space-x-2 mb-4 md:mb-0">
+          <i class="fas fa-utensils text-2xl text-accent"></i>
+          <h1 class="text-2xl font-bold">Jati <span class="text-accent">Raos</span></h1>
+        </div>
+        
+        <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm">
+          <a href="#home" class="hover:text-accent transition">Home</a>
+          <a href="#menu" class="hover:text-accent transition">Menu</a>
+          <a href="#location" class="hover:text-accent transition">Location</a>
+          <a href="#contact" class="hover:text-accent transition">Contact</a>
+          <a href="#" class="hover:text-accent transition">Privacy Policy</a>
+        </div>
+      </div>
+      
+      <div class="border-t border-primary-light mt-6 pt-6 text-center text-sm text-gray-300">
+        <p>&copy; 2025 Jati Raos Catering. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+        
+        // Close mobile menu if open
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
